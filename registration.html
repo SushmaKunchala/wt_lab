@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border: black solid 2px;
+            width: 30%;
+            margin-top: 30px;
+            margin-left: 500px;
+            padding: 10px;
+        }
+        input,textarea{
+            margin-left: 20px;
+        }
+        h3{
+            margin-left: 620px;
+        }
+        button{
+            background-color: green;
+            margin-left: 180px;
+        }
+
+    </style>
+
+<script>
+    function validateForm()
+    {
+      const name=document.getElementById('name').value;
+      const pwd=document.getElementById('pwd').value;
+      const mail=document.getElementById('email').value;
+      const mnum=document.getElementById('pnum').value;
+      if(name.length<6)
+      {
+          alert("Name should have atleast 6 characters ");
+      }
+      else{
+          for(let i=0;i<name.length;i++)
+          {
+              if((name[i]>='A' && name[i]<='Z')||(name[i]>='a' && name[i]<='z'))
+              {
+                  continue;
+              }
+              else{
+                  alert("Enter a Valid name");
+              }
+          }
+      }
+      if(pwd.length<6)
+      {
+          alert("password length should be atleast 6");
+      }
+      if(mnum.length==10)
+      {
+      for(let i=0;i<10;i++)
+      {
+        if(mnum[i]>='0' && mnum[i]<='9')
+        {
+            continue;
+        }
+        else{
+            alert("Invalid Mobile Number");
+            break;
+        }
+      }
+    }
+    else{
+        alert("Invalid Mobile Number");
+    }
+      
+      
+
+    }
+</script>
+</head>
+<body>
+    <h3>Registration Form</h3>
+    <form onsubmit="return validateForm()">
+        Name 
+        <input type="text" id="name">
+        <br><br>
+        Password
+        <input type="password" name="" id="pwd">
+        <br><br>
+        E-Mail 
+        <input type="email" name="" id="email">
+        <br><br>
+        Phone-Number <input type="text" id="pnum">
+        <br><br>
+        <label for="sex" id="sex">Sex :  </label>
+        Male
+        <input type="radio" name="sex" id="male">
+        Female
+        <input type="radio" name="sex" id="female">
+        <br><br>
+        Date Of Birth 
+        <select name="date" id="date">
+            <option></option>
+            <option value="one">1</option>
+            <option value="five">5</option>
+            <option value="twenty seven">27</option>
+          </select>
+          <select name="month" id="month">
+            <option></option>
+            <option value="Jan">January</option>
+            <option value="May">May</option>
+            <option value="July">July</option>
+          </select>
+          <select name="year" id="year">
+            <option></option>
+            <option value="one">2001</option>
+            <option value="two">2002</option>
+            <option value="three">2003</option>
+          </select>
+        <br><br>
+        <label for="lang" id="lang">Languages Known  :  </label>
+        <br>
+        English
+        <input type="checkbox" name="lang" id="">
+        Telugu<input type="checkbox" name="lang" id="">
+        Hindi<input type="checkbox" name="lang" id="">
+        Tamil<input type="checkbox" name="lang" id="">
+        <br><br>
+        Address 
+        <textarea name="" id="address" cols="30" rows="10"></textarea>
+        <br><br>
+        <button>Submit</button>
+    </form>
+
+    
+</body>
+</html>

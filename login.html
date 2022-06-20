@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+  table,tr,td{
+	 border:solid black 1px;
+ 	border-collapse: collapse;
+	}
+</style>
+   <script>
+    function validateForm()
+    {
+      const uname=document.getElementById('login').value;
+      const pwd=document.getElementById('pwd').value;
+      if(uname.length<6)
+      {
+          alert("Name should have atleast 6 characters ");
+      }
+      else{
+          for(let i=0;i<uname.length;i++)
+          {
+              if((uname[i]>='A' && uname[i]<='Z')||(uname[i]>='a' && uname[i]<='z'))
+              {
+                  continue;
+              }
+              else{
+                  alert("Enter a Valid name");
+              }
+          }
+      }
+      if(pwd.length<6)
+      {
+          alert("password length should be atleast 6");
+      }
+     
+    }
+
+</script>
+
+
+</head>
+<body>
+   <form onsubmit="return validateForm()">
+      <label for="login">Login</label>
+      <input type="text" id="login">
+      <br>
+      <label for="pwd">Password</label>
+      <input type="password" id="pwd">
+      <br>
+      <button>Submit</button>
+      <button>Reset</button>
+   </form>
+</body>
+</html>
